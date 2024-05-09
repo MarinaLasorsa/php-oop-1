@@ -7,7 +7,7 @@ class Production {
 
 
     public function setVote(int $vote) {
-        if (is_numeric($vote) && $vote > 0 $$ $vote <= 10) {
+        if (is_numeric($vote) && $vote > 0 && $vote <= 10) {
             $this->vote = intval($vote);
         } else {
             var_dump('errore');
@@ -20,4 +20,11 @@ class Production {
         $this->setVote($_vote);
     }
 
-}
+};
+
+$shrek = new Production('Shrek', 'english', 10);
+$akira = new Production('Akira', 'japanese', 9);
+
+var_dump($shrek);
+
+?>
