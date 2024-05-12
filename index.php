@@ -16,19 +16,45 @@ require_once __DIR__ . "/db.php";
 </head>
 <body>
     <main>
-        <div class="container">
+        <div class="container my-4">
+            <h2>MOVIES</h2>
             <div class="row gy-4">
                 <?php
-                foreach ($productions as $production):
+                foreach ($movies as $movie):
                 ?>
                 <div class="col-4">
                     <div class="card">
                         <div class="card-header">
-                        <h5 class="card-title"> <?php echo $production->title ?> </h5>
+                        <h5 class="card-title"> <?php echo $movie->title ?> </h5>
                         </div>
                         <div class="card-body">
-                            <h6 class="card-subtitle"> <?php echo $production->language ?> </h6>
-                            <p class="card-text"> Rating: <?php echo $production->vote ?> </p>
+                            <h6 class="card-subtitle"> <?php echo $movie->language ?> </h6>
+                            <p class="card-text"> Rating: <?php echo $movie->vote ?> </p>
+                            <p class="card-text"> Profit: <?php echo $movie->getProfitFull() ?> </p>
+                            <p class="card-text"> Duration: <?php echo $movie->getDurationFull() ?> </p>
+                        </div>
+                    </div>
+                </div>
+                <?php 
+                endforeach;
+                ?>
+            </div>
+        </div>
+        <div class="container my-4">
+            <h2>TV SERIES</h2>
+            <div class="row gy-4">
+                <?php
+                foreach ($tv_series as $tv_serie):
+                ?>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                        <h5 class="card-title"> <?php echo $tv_serie->title ?> </h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-subtitle"> <?php echo $tv_serie->language ?> </h6>
+                            <p class="card-text"> Rating: <?php echo $tv_serie->vote ?> </p>
+                            <p class="card-text"> Number of seasons: <?php echo $tv_serie->getSeasonsNumberFull() ?> </p>
                         </div>
                     </div>
                 </div>

@@ -1,16 +1,22 @@
 <?php
 
-require_once __DIR__ . "/Models/Production.php";
+require_once __DIR__ . "/Models/Movie.php";
+require_once __DIR__ . "/Models/TVSerie.php";
 
-$shrek = new Production('Shrek', 'english', 10);
-$akira = new Production('Akira', 'japanese', 9);
-$breakingbad = new Production('Breaking Bad', 'english', 8);
-$starwars = new Production('Star Wars', 'english', 7);
-$goncharov = new Production('Goncharov', 'english', 10);
-$brooklyn99 = new Production('Brooklyn 99', 'english', 9);
+$shrek = new Movie('Shrek', 'English', 10, 260, 89);
+$akira = new Movie('Akira', 'Japanese', 9, 3, 124);
+$breakingbad = new TVSerie('Breaking Bad', 'English', 8, 5);
+$goncharov = new Movie('Goncharov', 'English', 10, 500, 125);
+$brooklyn99 = new TVSerie('Brooklyn 99', 'English', 9, 8);
+$strangerthings = new TVSerie('Stranger Things', 'English', 6, 4);
 
-$productions = [
-    $shrek, $akira, $breakingbad, $starwars, $goncharov, $brooklyn99
+$movies = [
+    $shrek, $akira, $goncharov
 ];
 
-//var_dump($productions);
+$tv_series = [
+    $breakingbad, $brooklyn99, $strangerthings
+];
+
+//var_dump($movies);
+//var_dump($tv_series);
